@@ -1,7 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+    <meta charaset="utf-8">
+    <title>ごきげんようサイコロ</title>
+    <style type="text/css">
+    *{
+        margin:0;
+        padding:0;
+    }
+
+    html,body{
+        height: 100% ;
+    }
+
+    #number {
+        font-size: 100px;
+        text-align: center;
+    }
+
+    #talk {
+        font-size: 120px;
+        text-align: center;
+        font-weight: bold;
+    }
+    </style>
+</head>
 <body>
-<h1>Hello world</h1>
+    <div id="number">
+        Click Here!
+    </div>
+    <div id="talk">
+        Talk about ... ?
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        var array = [
+            "今日の当たり目",
+            "納得できない話",
+            "恋の話",
+            "びっくりした話",
+            "なんでこんなにかわいいのかと思う話",
+            "恥ずかしい話",
+            "情けない話",
+            "始めてXXした話",
+            "ひょっとしたら私だけ",
+            "怖い話",
+            "今だからゴメンナサイ話",
+            "ちょっとイイ話",
+            "ありえない話",
+            "忘れられない話",
+            "信じられない話",
+            "笑える話",
+            "気になってしょうがないこと",
+            "やめられない話",
+            "自分をほめてあげたい話",
+            "びっくりした話",
+            "お世話になりました",
+            "へこんだ話",
+        ];
+        $("body").on("click", function(){
+            var rand = Math.floor( Math.random() * 22 );
+            $("#number").html(rand + 1);
+
+            var text = array[0];
+            $("#talk").html(array[rand]);
+
+        });
+    </script>
 </body>
 </html>
